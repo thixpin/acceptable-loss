@@ -1,0 +1,201 @@
+@page {
+
+/* Two families: Noto Sans Myanmar (body 400, section headings 600, titles 700) and Noto Sans Mono (code). Each file covers Myanmar and Latin. */
+@font-face { font-family: "Noto Sans Myanmar"; font-weight: 400; font-style: normal; src: url("../fonts/NotoSansMyanmar-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Noto Sans Myanmar"; font-weight: 600; font-style: normal; src: url("../fonts/NotoSansMyanmar-SemiBold.ttf") format("truetype"); }
+@font-face { font-family: "Noto Sans Myanmar"; font-weight: 700; font-style: normal; src: url("../fonts/NotoSansMyanmar-Bold.ttf") format("truetype"); }
+@font-face { font-family: "Noto Sans Myanmar"; font-weight: 400; font-style: italic; src: url("../fonts/NotoSansMyanmar-Italic.ttf") format("truetype"); }
+@font-face { font-family: "Noto Sans Myanmar"; font-weight: 700; font-style: italic; src: url("../fonts/NotoSansMyanmar-BoldItalic.ttf") format("truetype"); }
+@font-face { font-family: "Noto Sans Mono"; font-weight: 400; font-style: normal; src: url("../fonts/NotoSansMono-Regular.ttf") format("truetype"); }
+@font-face { font-family: "Noto Sans Mono"; font-weight: 700; font-style: normal; src: url("../fonts/NotoSansMono-Bold.ttf") format("truetype"); }
+
+size: A5 portrait;
+  margin: 19mm 17mm 20mm 17mm;
+  font-family: "Noto Sans Myanmar", sans-serif;
+  @bottom-center {
+    content: counter(page);
+    font-size: 9pt;
+    color: #333;
+    vertical-align: top;
+    padding-top: 4mm;
+  }
+}
+@page :left {
+  margin-left: 17mm;   /* outside */
+  margin-right: 22mm;  /* inside, toward the spine */
+  @top-left {
+    content: string(booktitle);
+    font-size: 8.5pt;
+    color: #555;
+    vertical-align: bottom;
+    padding-bottom: 3mm;
+  }
+}
+@page :right {
+  margin-left: 22mm;   /* inside */
+  margin-right: 17mm;  /* outside */
+  @top-right {
+    content: string(chaptertitle);
+    font-size: 8.5pt;
+    color: #555;
+    vertical-align: bottom;
+    padding-bottom: 3mm;
+  }
+}
+@page :blank {
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-center { content: none; }
+}
+
+/* Front matter: no headers, no page numbers. */
+@page front {
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-center { content: none; }
+}
+@page cover {
+  margin: 0;
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-center { content: none; }
+}
+/* Chapter opening page: no running header, no page number.
+   Chapters alternate between two named pages so each one starts its own page group. */
+@page chapter-a:nth(1 of chapter-a) {
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-center { content: none; }
+}
+@page chapter-b:nth(1 of chapter-b) {
+  @top-left { content: none; }
+  @top-right { content: none; }
+  @bottom-center { content: none; }
+}
+
+html { font-size: 10.75pt; }
+body {
+  margin: 0; /* override the UA default 8px so the page margins are exactly as set */
+  font-size: 1rem;
+  line-height: 1.55;
+  color: #000;
+  text-align: justify;
+  string-set: booktitle attr(data-title);
+}
+
+.cover-page {
+  page: cover;
+  page-break-after: always;
+  break-after: page;
+  width: 148mm;
+  height: 210mm;
+}
+.cover-page img {
+  display: block;
+  width: 148mm;
+  height: 210mm;
+  object-fit: cover;
+}
+
+.front {
+  page: front;
+  page-break-after: always;
+  break-after: page;
+}
+.title-page {
+  text-align: center;
+  padding-top: 60mm;
+}
+.title-page .book-title {
+  font-size: 26pt;
+  font-weight: 700;
+  font-family: "Noto Sans Myanmar", sans-serif;
+  line-height: 1.3;
+  margin: 0 0 8mm 0;
+}
+.title-page .book-subtitle { font-size: 12pt; margin: 0 0 20mm 0; }
+.title-page .book-author { font-size: 13pt; margin: 0; }
+.title-page .book-publisher { font-size: 10pt; margin-top: 50mm; color: #333; }
+
+.copyright-page {
+  font-size: 9pt;
+  line-height: 1.5;
+  padding-top: 120mm;
+  text-align: left;
+}
+.copyright-page p { text-indent: 0; margin: 0 0 0.6em 0; }
+
+.toc-page h1 {
+  font-size: 15pt;
+  font-weight: 700;
+  text-align: center;
+  margin: 10mm 0 8mm 0;
+}
+.toc-page ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.toc-page li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10.5pt;
+  line-height: 1.6;
+  margin: 0;
+}
+.toc-page li a {
+  color: inherit;
+  text-decoration: none;
+  flex: 1 1 auto;
+  border-bottom: 0.3pt dotted #999;
+  margin-right: 2mm;
+}
+.toc-page li a::after {
+  content: target-counter(attr(href url), page);
+  float: right;
+  background: #fff;
+  padding-left: 2mm;
+}
+
+/* Terminal blocks: build.py sets an explicit font-size per block (fit_pre_blocks) so the
+   longest line fits the measure without wrapping; pre-wrap in common.css is the safety net. */
+
+.chapter {
+  page-break-before: always;
+  break-before: page;
+}
+.chapter.group-a { page: chapter-a; }
+.chapter.group-b { page: chapter-b; }
+.chapter.recto {
+  page-break-before: right;
+  break-before: right;
+}
+.chapter-head {
+  text-align: center;
+  padding-top: 34mm;
+  margin-bottom: 14mm;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+.chapter-head .chapter-number {
+  font-size: 11pt;
+  font-weight: 600;
+  margin: 0 0 3mm 0;
+  text-indent: 0;
+  letter-spacing: 0.04em;
+}
+.chapter-head h1 {
+  font-size: 18pt;
+  font-weight: 700;
+  line-height: 1.35;
+  margin: 0;
+  string-set: chaptertitle content();
+}
+
+.end-page {
+  page: front;
+  text-align: center;
+  padding-top: 80mm;
+  font-size: 10pt;
+  color: #333;
+}

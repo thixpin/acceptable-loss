@@ -1,0 +1,85 @@
+/* Shared typography for PDF and EPUB.
+   Body and headings: Noto Sans Myanmar. Code: Noto Sans Mono.
+   Each family file also carries the other script (see fonts.py). */
+
+body {
+  font-family: "Noto Sans Myanmar", sans-serif;
+  font-weight: 400;
+}
+
+h1, h2, h3, .chapter-number, .book-title {
+  font-family: "Noto Sans Myanmar", sans-serif;
+}
+
+p {
+  margin: 0;
+  text-indent: 6mm;
+  orphans: 2;
+  widows: 2;
+}
+
+/* No indent on the first paragraph of a block or after a break. */
+.chapter-head + p, h2 + p, blockquote + p, pre + p, hr + p,
+.noindent, blockquote p {
+  text-indent: 0;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 1.05em;
+  line-height: 1.35;
+  margin: 1.5em 0 0.6em 0;
+  text-indent: 0;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+blockquote {
+  margin: 0.9em 0 0.9em 6mm;
+  padding: 0 0 0 3mm;
+  border-left: 0.5pt solid #666;
+  font-size: 0.95em;
+}
+blockquote p + p { margin-top: 0.4em; }
+/* AURA system headers such as [AURA: SYSTEM_ADVISORY] */
+blockquote code {
+  font-weight: 700;
+  font-size: 0.8em;
+}
+
+/* Terminal commands, logs and code: monospace, smaller than body. */
+pre, code {
+  font-family: "Noto Sans Mono", monospace;
+}
+code {
+  font-size: 0.82em;
+}
+pre {
+  font-size: 0.72em;
+  line-height: 1.4;
+  margin: 0.9em 0;
+  padding: 0.6em 0.8em;
+  border: 0.4pt solid #999;
+  background: #f6f6f6;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+pre code {
+  font-size: inherit;
+}
+
+hr {
+  border: none;
+  margin: 1.4em 0;
+  text-align: center;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+hr::after {
+  content: "*  *  *";
+  white-space: pre;
+  color: #444;
+}
+
+em { font-style: italic; }
+strong { font-weight: 700; }

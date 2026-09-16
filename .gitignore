@@ -1,0 +1,18 @@
+# Python environment and caches
+.venv/
+__pycache__/
+*.pyc
+
+# Build outputs (regenerate with: python3 publish/build.py all)
+dist/
+
+# Downloaded and merged fonts (regenerate with: python3 publish/fonts.py)
+publish/fonts/*.ttf
+publish/fonts/_src/
+
+# macOS
+.DS_Store
+
+# Drafts files 
+/drafts/
+CLAUDE.md
