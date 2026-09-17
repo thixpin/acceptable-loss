@@ -7,7 +7,7 @@ Usage:
     python3 build.py epub
     python3 build.py qa
 
-Sources: ../chapter-NN.md, ../Cover.png, book.json, css/, fonts/.
+Sources: ../chapters/chapter-NN.md, ../Cover.png, book.json, css/, fonts/.
 Outputs: ../dist/
 """
 from __future__ import annotations

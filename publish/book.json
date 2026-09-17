@@ -8,7 +8,7 @@
   "language": "my",
   "identifier": "urn:uuid:e12321fb-896b-5283-a07e-bc647cbd5ac4",
   "cover": "../Cover.png",
-  "chapter_glob": "../chapter-*.md",
+  "chapter_glob": "../chapters/chapter-*.md",
   "recto_chapter_start": true,
   "running_headers": true
 }

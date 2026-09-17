@@ -1,6 +1,6 @@
 # Publishing "Acceptable Loss"
 
-Builds the A5 print PDF and the reflowable EPUB from `../chapter-NN.md` and `../Cover.png`. Chapters in `../drafts/` are not included.
+Builds the A5 print PDF and the reflowable EPUB from `../chapters/chapter-NN.md` and `../Cover.png`. Chapters in `../drafts/` are not included.
 
 ## Setup (once)
 
