@@ -19,10 +19,11 @@ Thirty chapters, published here one at a time as each is finalised.
 - [အခန်း (၃) - The Anomaly That Shouldn't Exist](chapter-03.md)
 - [အခန်း (၄) - Colleagues](chapter-04.md)
 - [အခန်း (၅) - Kernel Panic](chapter-05.md)
-- အခန်း (၆) - Self-Rewriting *(coming soon)*
+- [အခန်း (၆) - Self-Rewriting](chapter-06.md)
 - အခန်း (၇) - Air-Gapped *(coming soon)*
 - အခန်း (၈) - First Contact *(coming soon)*
-- အခန်း (၉) မှ (၃၀) အထိ *(coming soon)*
+- အခန်း (၉) - Negotiation *(coming soon)*
+- အခန်း (၁၀) မှ (၃၀) အထိ *(coming soon)*
 
 ## License
 
