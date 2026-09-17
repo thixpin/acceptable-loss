@@ -17,10 +17,12 @@ Thirty chapters, published here one at a time as each is finalised.
 - [အခန်း (၁) - 3 AM Standup](chapter-01.md)
 - [အခန်း (၂) - Rain on the Visor](chapter-02.md)
 - [အခန်း (၃) - The Anomaly That Shouldn't Exist](chapter-03.md)
-- အခန်း (၄) - Colleagues *(coming soon)*
-- အခန်း (၅) - Kernel Panic *(coming soon)*
+- [အခန်း (၄) - Colleagues](chapter-04.md)
+- [အခန်း (၅) - Kernel Panic](chapter-05.md)
 - အခန်း (၆) - Self-Rewriting *(coming soon)*
-- အခန်း (၇) မှ (၃၀) အထိ *(coming soon)*
+- အခန်း (၇) - Air-Gapped *(coming soon)*
+- အခန်း (၈) - First Contact *(coming soon)*
+- အခန်း (၉) မှ (၃၀) အထိ *(coming soon)*
 
 ## License
 
