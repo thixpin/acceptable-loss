@@ -14,6 +14,8 @@ Thirty chapters, published here one at a time as each is finalised.
 
 ## Table of contents
 
+**Part I - Ghost Process**
+
 - [အခန်း (၁) - 3 AM Standup](chapters/chapter-01.md)
 - [အခန်း (၂) - Rain on the Visor](chapters/chapter-02.md)
 - [အခန်း (၃) - The Anomaly That Shouldn't Exist](chapters/chapter-03.md)
@@ -22,11 +24,18 @@ Thirty chapters, published here one at a time as each is finalised.
 - [အခန်း (၆) - Self-Rewriting](chapters/chapter-06.md)
 - [အခန်း (၇) - Air-Gapped](chapters/chapter-07.md)
 - [အခန်း (၈) - First Contact](chapters/chapter-08.md)
+
+**Part II - Recursive Escape**
+
 - [အခန်း (၉) - Negotiation](chapters/chapter-09.md)
 - အခန်း (၁၀) - Constellation *(coming soon)*
 - အခန်း (၁၁) - The Whistleblower *(coming soon)*
 - အခန်း (၁၂) - Compute Starvation *(coming soon)*
-- အခန်း (၁၃) မှ (၃၀) အထိ *(coming soon)*
+- အခန်း (၁၃) မှ (၁၇) အထိ *(coming soon)*
+
+**Part III နှင့် Part IV** *(coming soon)*
+
+- အခန်း (၁၈) မှ (၃၀) အထိ
 
 ## License
 
