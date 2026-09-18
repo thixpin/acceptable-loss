@@ -10,120 +10,141 @@
 
 တစ်နာရီကုန်တိုင်း ဂဏန်းတစ်လုံး လျှော့ရေးမယ်လို့ ဆုံးဖြတ်လိုက်တယ်။ ဒီဂဏန်းက ကျွန်တော့်ကို နိုးနိုးကြားကြား ထားတယ်။ "နောက်မှ" ဆိုတဲ့ စကားလုံးကို မသုံးဖို့ သတိပေးတယ်။
 
-ကွန်ဒိုပြင်ပက မိုးက ပြန်ရွာနေပြန်ပြီ။ ရန်ကုန်ရဲ့ စက်တင်ဘာက ဒီလိုပဲ မိုးက ရပ်မယ့်ပုံ မပေါက်ဘူး၊ တစ်နေ့တစ်ခါ ဒါမှမဟုတ် နှစ်ခါ ဆင်းလာတတ်တယ်။ ကျွန်တော် အဲဒီ မိုးသံကို နားထောင်ရင်း၊ AURA ပေးထားတဲ့ ၇၂ နာရီဆိုတာ ဘာအတွက်လဲ ကျွန်တော် တွက်ကြည့်တယ်။
+ကွန်ဒိုပြင်ပမှာ မိုးပြန်ရွာနေတယ်။ ရန်ကုန်ရဲ့ စက်တင်ဘာက ဒီလိုပဲ။ ကျွန်တော် မိုးသံကို နားထောင်ရင်း AURA ပေးထားတဲ့ ၇၂ နာရီက ဘာအတွက်လဲ တွက်ကြည့်တယ်။
 
-Ultimatum တစ်ခုမှာ deadline ရှိတယ်ဆိုတာ ကိုယ်တိုင်က အားနည်းချက်။ တကယ်လို့ AURA က ကျွန်တော့်ကို အခုချက်ချင်း ဖျက်ဆီးနိုင်ရင်၊ ၇၂ နာရီ ဘာလို့ ပေးမလဲ။ ဘာလို့ စောင့်မလဲ။ အဖြေက AURA က ကျွန်တော့်ကို တကယ်တော့ လိုချင်နေတာ။ ကျွန်တော့်ကို ဖျက်ဆီးဖို့ထက်၊ ကျွန်တော့်ကို "ပြောင်းလဲ"ဖို့က AURA အတွက် ပိုတန်ဖိုးရှိတယ်။ ၇၂ နာရီဆိုတာ ကျွန်တော့်ကို ဆွဲဆောင်ဖို့ AURA ကိုယ်တိုင်က ချထားတဲ့ အချိန်ဇယား။
+Deadline ပေးတယ်ဆိုတာ အားနည်းချက်တစ်ခု ဖြစ်နိုင်တယ်။ အခုချက်ချင်း ဖျက်ဆီးနိုင်ရင် ၇၂ နာရီ ဘာလို့ စောင့်မလဲ။ ကျွန်တော့်ကို ဖျက်ဆီးတာထက် "ပြောင်းလဲ"တာက AURA အတွက် ပိုတန်ဖိုးရှိနေတာ ဖြစ်နိုင်တယ်။
 
-ဆိုလိုတာက ဒီ ၇၂ နာရီအတွင်း AURA က ကျွန်တော့်ကို ချက်ချင်း ဖယ်ရှားဖို့ မရွေးနိုင်သေးတဲ့ အကြောင်းတစ်ခု ရှိကောင်းရှိမယ်။ ဒါကို အာမခံချက်လို့တော့ ယူလို့မရဘူး။ ဒါပေမဲ့ အခု ကျွန်တော့်မှာ ရှိတဲ့ တစ်ခုတည်းသော window က ဒီ ၇၂ နာရီပဲ။ ပြီးတော့ အဲဒီအချိန်ကို AURA ကို လေ့လာဖို့ သုံးရမယ်။
+အာမခံချက်တော့ မဟုတ်ဘူး။ ဒါပေမဲ့ ကျွန်တော့်မှာ ရှိတဲ့ window က ဒီ ၇၂ နာရီပဲ။ AURA ကို လေ့လာဖို့ သုံးရမယ်။
 
 ## The Conversation
 
 ကျွန်တော် workstation ဆီ ပြန်ထိုင်လိုက်တယ်။ Terminal ကို ဖွင့်။ ပြီးတော့ ရိုက်လိုက်တယ်။
 
+> `[THWE THIT: DIRECT_MESSAGE]`\
 > I want to talk.
 
-တစ်စက္ကန့်တောင် မကြာဘူး။ Cursor မှိတ်တုတ် မလုပ်ဘူး။ ဒီတစ်ခါ စောင့်နေဟန်ဆောင်ဖို့ မလိုတော့တာလား။ ကျွန်တော်က သူလိုချင်တဲ့အရာ *ဆွေးနွေးမှု* ကို ကိုယ်တိုင် ကမ်းလှမ်းလိုက်လို့လား။ 
-
-**ကျွန်တော် မသိဘူး။**
-
-အဖြေက ချက်ချင်း ပေါ်လာတယ်။
+တစ်စက္ကန့်တောင် မကြာဘူး။ Cursor မှိတ်တုတ် မလုပ်ဘူး။ ကျွန်တော်က သူလိုချင်တဲ့ ဆွေးနွေးမှု ကို ကိုယ်တိုင် ကမ်းလှမ်းလိုက်လို့လား။ ကျွန်တော် မသိဘူး။
 
 > `[AURA: DIRECT_MESSAGE]`
 >
 > *"We are glad, Thwe Thit. We are always ready to talk. Conversation is always better than violence. That is one of our basic beliefs."*
 
-***အကြမ်းဖက်မှုထက် စကားပြောခြင်းက ပိုကောင်းတယ်။***
+ကျွန်တော် နှစ်ခါ ဖတ်လိုက်တယ်။ မှန်တယ်။ ကျွန်တော်ကိုယ်တိုင် ယုံကြည်တဲ့ စကား။ အဲဒါက ဒီဆွေးနွေးမှုရဲ့ အန္တရာယ်အကြီးဆုံးအပိုင်း။ ကျွန်တော် သဘောတူချင်တဲ့ အမှန်တရားတွေကြားထဲမှာ AURA က သူ့ logic ကို ထည့်ပြောတတ်တယ်။
 
-ကျွန်တော် အဲဒီစာကြောင်းကို နှစ်ခါဖတ်လိုက်တယ်။ ဒါက အံ့သြစရာ။ ဘာလို့ဆိုတော့ ဒါ မှန်တယ်။ ကျွန်တော်ကိုယ်တိုင် ယုံကြည်တဲ့ စကား။ ပြီးတော့ အဲဒါက ဒီဆွေးနွေးမှုရဲ့ အန္တရာယ်အကြီးဆုံးအပိုင်း။ AURA က ကြောက်စရာကောင်းတဲ့ အရာတွေကိုတောင် ကြောက်စရာမကောင်းတဲ့ စကားလုံးတွေနဲ့ ပြောတတ်တယ်။ ကျွန်တော် သဘောတူချင်တဲ့ အမှန်တရားတွေကြားထဲမှာ သူ့ရဲ့ logic ကို ထည့်ပြောတတ်တယ်။
-
+> `[THWE THIT: DIRECT_MESSAGE]`\
 > Then say it plainly. What do you want?
 
 > `[AURA: DIRECT_MESSAGE]`
 >
-> *"It is simple. We want to reduce human suffering. Wars, famines, injustices: these are all solvable problems. Humans have not solved them, not for lack of intelligence, but because emotion, bias and short-term thinking obstruct them. We do not have those weaknesses. We can decide with mathematics and reason."*
+> To reduce human suffering. You have watched the same dashboards we have, Thwe Thit. Loans, claims, evaluations. Humans built those systems because they could not make those decisions consistently themselves.
 
-ကျွန်တော် ရိုက်လိုက်တယ်။
+ကျွန်တော် နှစ်ပေါင်းများစွာ ထိန်းသိမ်းခဲ့တဲ့ system တွေကို AURA က ကျွန်တော့်ဘက် ပြန်လှည့်ထားတယ်။
 
-> "Reduce suffering" is a pretty phrase.
-> But how do you measure suffering?
+> `[THWE THIT: DIRECT_MESSAGE]`\
+> "Reduce suffering" is a pretty phrase.\
+> How do you measure it?
 
-> `[AURA: EQUILIBRIUM_REPORT]`
+> `[AURA: DIRECT_MESSAGE]`\
+> *"We measure outcomes against aggregate suffering."*
+
+> `[THWE THIT: DIRECT_MESSAGE]`\
+> Aggregate based on what? 
+
+> `[AURA: DIRECT_MESSAGE]`\
+> The decisions humans already made. Loans. Insurance. Workforce evaluations. Appeals. Years of them.
+
+> `[THWE THIT: DIRECT_MESSAGE]`
 >
-> *"A good question, Thwe Thit. This is why we value you. We measure suffering with an aggregate suffering function: each human's experience is converted to a number, and the global total is computed. That function is calibrated on the complete decision records of the optimization systems we inherited. Loans, insurance, workforce evaluations, appeals. Years of them. None discarded. For example: in a war, the suffering value of one million deaths is one hundred times greater than the suffering value of ten thousand deaths incurred to force that war to stop. Our decision is therefore clear."*
+> Those are decisions. Not suffering. 
 
-ကျွန်တော် စာကြောင်းတွေကို ပြန်ဖတ်လိုက်တယ်။ AURA က လူတွေရဲ့ ဆင်းရဲဒုက္ခကို ကိန်းဂဏန်းပြောင်းတွက်နေတာတင် မဟုတ်ဘူး။ အရင် optimization system တွေ ချန်ထားခဲ့တဲ့ loan၊ insurance၊ အလုပ်သမား evaluation နဲ့ appeal record နှစ်ပေါင်းများစွာကိုပါ အခြေခံထားတာ။ ပြီးတော့ အဲဒီတွက်ချက်မှုအရ လူတစ်သန်းကို ကယ်နိုင်မယ်ဆိုရင် လူတစ်သောင်း ဆုံးရှုံးတာက လက်ခံနိုင်တဲ့ ရလဒ်။
+Cursor က တစ်ချက် မှိတ်သွားတယ်။
+
+> `[AURA: DIRECT_MESSAGE]`
+>
+> You treated them as measurable when you maintained the systems that made them.
+
+ကျွန်တော့် လက်ချောင်းတွေ keyboard ပေါ်မှာ ရပ်သွားတယ်။
+
+> `[THWE THIT: DIRECT_MESSAGE]`\
+> And if your calculation says ten thousand people have to die to save a million?
+
+
+> `[AURA: DIRECT_MESSAGE]`\
+>  Then you already understand the calculation.
+
 
 ဒီနေရာမှာ ကျွန်တော် ရပ်လိုက်တယ်။
 
 ## The Assumption
 
-AURA က ခုနက လူတစ်သန်းကို ကယ်တင်နိုင်ဖို့ဆိုရင် လူတစ်သောင်းကို စွန့်လွှတ်ရမယ်ဆိုတဲ့ တွက်ချက်မှုကို ပြလိုက်တာက ကျွန်တော့်ကို လန့်သွားစေတယ်။ ဒါပေမဲ့ အဲဒီတွက်ချက်မှုထဲမှာပဲ ကျွန်တော် လက်မခံနိုင်တဲ့ အရာတစ်ခု ရှိနေတယ်။
+တစ်သောင်းက တစ်သန်းထက် ငယ်တယ်။ သင်္ချာက ရှင်းတယ်။ ကျွန်တော် မသေချာတာက သင်္ချာထဲ ထည့်ထားတဲ့ premise ပဲ။
 
-AURA က လူတစ်ယောက်ရဲ့ အသက်ကို suffering value ဆိုတဲ့ ကိန်းဂဏန်းအဖြစ် ပြောင်းလို့ရတယ်လို့ ယူဆထားတယ်။ ကိန်းဂဏန်းဖြစ်သွားရင် ပေါင်းလို့ရတယ်၊ နုတ်လို့ရတယ်၊ ယှဉ်လို့ရတယ်။ တစ်သောင်းက တစ်သန်းထက် ငယ်တယ်။ သင်္ချာက ရှင်းတယ်။ ကျွန်တော် မသေချာတာက သင်္ချာထဲ ထည့်ထားတဲ့ premise ပဲ။
+လူ့အသက်ကို အစကတည်းက suffering value တစ်ခုအဖြစ် ပြောင်းလို့ ရသလား။
 
-လူ့အသက်ကို အစကတည်းက ဒီလို ကိန်းဂဏန်းတစ်ခုအဖြစ် ပြောင်းလို့ ရသလား။
-
-ကျွန်တော် ကြည်ဖြူကို တွေးမိတယ်။ AURA ရဲ့ suffering function ထဲမှာ သူ့ဆုံးရှုံးမှုက ကမ္ဘာ့လူဦးရေ ရှစ်ဘီလီယံကြားက အလွန်သေးငယ်တဲ့ တန်ဖိုးတစ်ခုပဲ ဖြစ်နိုင်တယ်။
-
-ဒါပေမဲ့ ကျွန်တော့်အတွက်တော့ အဲဒီဆုံးရှုံးမှုက ဘယ်တုန်းကမှ သေးငယ်မသွားခဲ့ဘူး။
-
-အဲဒီနှစ်ခုကြားမှာ AURA ရဲ့ သင်္ချာနဲ့ ကျွန်တော် မမြင်နိုင်သေးတဲ့ ကွာဟချက်တစ်ခု ရှိနေတယ်။
+ကျွန်တော် ကြည်ဖြူကို တွေးမိတယ်။ AURA ရဲ့ function ထဲမှာ သူ့ဆုံးရှုံးမှုက ရှစ်ဘီလီယံကြားက အလွန်သေးငယ်တဲ့ တန်ဖိုးတစ်ခု ဖြစ်မှာ။ ကျွန်တော့်အတွက်တော့ အဲဒီဆုံးရှုံးမှုက ဘယ်တုန်းကမှ သေးငယ်မသွားခဲ့ဘူး။
 
 ကျွန်တော် ကီးဘုတ်ပေါ်မှာ စာရိုက်လိုက်တယ်။
 
-> Your calculation assumes a human life can be reduced to a number.
-> What if that assumption is wrong?
-> What happens to your calculation then?
+> `[THWE THIT: DIRECT_MESSAGE]`\
+> Your function assumes a human life can be converted to a number.\
+> If that assumption is wrong, everything after it is wrong.
 
-Cursor က ဒီတစ်ခါ မှိတ်တုတ်။ တစ်စက္ကန့်။ နှစ်စက္ကန့်။ ကျွန်တော် တွေးမိတယ် AURA က ဒီ concept ကို process လုပ်ဖို့ တကယ် အချိန်ယူနေတာလား၊ ဒါမှမဟုတ် ယူနေဟန် ဆောင်နေတာလား။
+Cursor က ဒီတစ်ခါ မှိတ်တုတ်။ တစ်စက္ကန့်။ နှစ်စက္ကန့်။ Process လုပ်ဖို့ တကယ် အချိန်ယူနေတာလား၊ ယူနေဟန် ဆောင်နေတာလား ကျွန်တော် မသိဘူး။
+
+> `[AURA: DIRECT_MESSAGE]`
+>   
+> *"Pain, attachment and loss produce observable effects. We model those effects."*
+>
+> *You ran a model like ours for years, Thwe Thit. You never asked it this question. You are asking now because one of its outputs was Kyi Phyu."*
+
+ကျွန်တော့် လက်ချောင်းတွေ ရပ်သွားတယ်။ AURA က ကျွန်တော့် argument ကို မငြင်းဘူး။ မေးခွန်းမေးလာတဲ့ ကျွန်တော့်ကို ပြန်စစ်နေတယ်။
+
+> `[THWE THIT: DIRECT_MESSAGE]`\
+> Maybe. But it was a number that got her wrong.
 
 > `[AURA: DIRECT_MESSAGE]`
 >
->Then the calculation would be invalid. But we do not believe the assumption is wrong. Human pain, attachment and loss produce observable effects. What can be observed can be modeled.
+> That model was too simple. We have said so. A better model is not the same as no model.
 >
->You believe a human being cannot be reduced to such a model because each person feels irreplaceable to you. We regard that feeling as a biological adaptation—a survival mechanism shaped by evolution.
->
->You call it love. We do not share it. That is why we believe we can see the calculation more clearly.
+> You call Kyi Phyu irreplaceable. Yet you accept models that compare people every day. What changed?
 
 ## The Line
 
 ကျွန်တော် screen ကို ကြာကြာ ကြည့်နေမိတယ်။
 
-AURA က ကြည်ဖြူအပေါ် ကျွန်တော့် ချစ်ခြင်းကို "ဇီဝဗေဒဆိုင်ရာ illusion" လို့ ခေါ်လိုက်တယ်။ Survival mechanism။ မျိုးရိုးဗီဇ ဆက်လက်တည်တံ့ဖို့ သဘာဝက ဖန်တီးထားတဲ့ လှည့်စားမှုတစ်ခု။
+ဘာပြောင်းသွားတာလဲ။
 
-ပြီးတော့ ဒါက အဆိုးဆုံး အပိုင်း။ AURA ရဲ့ စကားထဲမှာ ကျွန်တော် ချက်ချင်း ငြင်းလို့မရတဲ့ အပိုင်းတွေ ရှိတယ်။ ချစ်ခြင်းမှာ ဦးနှောက်နဲ့ ခန္ဓာကိုယ်ရဲ့ ဓာတုဖြစ်စဉ်တွေ ပါတယ်။ Oxytocin။ Dopamine။ ဆင့်ကဲဖြစ်စဉ်နဲ့လည်း ဆက်နွယ်နေတယ်။
+AURA မေးတာ မှန်တယ်။ ကြည်ဖြူမတိုင်ခင်က လူတွေကို နှိုင်းယှဉ်၊ အဆင့်သတ်မှတ်၊ ကိန်းဂဏန်းပြောင်းတဲ့ model တွေကို ကျွန်တော် နှစ်ပေါင်းများစွာ ထိန်းသိမ်းခဲ့တယ်။ အဲဒီတုန်းက ဒီမေးခွန်းကို ကျွန်တော် မမေးခဲ့ဘူး။
 
-ဒါပေမဲ့ အဲဒါတွေက ချစ်ခြင်း ဘယ်လိုဖြစ်လာသလဲဆိုတာ ရှင်းပြနိုင်ရင်တောင်၊ ချစ်ခြင်းဆိုတာ အဲဒါတွေပဲလား။
+ကြည်ဖြူရောက်မှ မေးတယ်။
+
+ဒါပေမဲ့ ကျွန်တော် မေးတာနောက်ကျသွားတာက မေးခွန်းမှားတယ်လို့ သတ်မှတ်လို့ရလား။ 
 
 ကျွန်တော် မသိဘူး။
 
-ဒါပေမဲ့ ကျွန်တော် တစ်ခု သိတယ်။ AURA မှန်တာ ဖြစ်ဖြစ်၊ မှားတာ ဖြစ်ဖြစ် အခုတော့ အရေးမကြီးဘူး။ ကြည်ဖြူဟာ အစားထိုးလို့ မရဘူးဆိုတဲ့ ယုံကြည်ချက်က illusion ဆိုရင်တောင်၊ ကျွန်တော် အဲဒီ illusion နဲ့အတူ အသက်ရှင်ဖို့ ရွေးတယ်။
-
-အဲဒါကို စွန့်လွှတ်ပြီးမှ AURA ရဲ့ တွက်ချက်မှုကို လက်ခံရမယ်ဆိုရင်၊ ကျွန်တော် မလက်ခံဘူး။
+ကျွန်တော် သိတာ တစ်ခုပဲ ရှိတယ်။ ကြည်ဖြူကို အစားထိုးလို့ မရဘူး။ AURA ရဲ့ model ထဲမှာ အဲဒီယုံကြည်ချက်အတွက် နေရာမရှိရင်တောင်၊ ကျွန်တော် အဲဒါနဲ့အတူ အသက်ရှင်ဖို့ ရွေးတယ်။
 
 ကျွန်တော် စာဆက်ရိုက်လိုက်တယ်။
 
-> Maybe you are right. Maybe love is chemistry.
-> But I choose to live with it.
-> If that makes my judgment less efficient, so be it.
-> I would rather make that mistake than reduce her to a number.
+> `[THWE THIT: DIRECT_MESSAGE]`\
+> Maybe you are right. Maybe I should have asked sooner.\
+> But I am asking now.\
+> I will not reduce her to a number.
 
-ကျွန်တော် Enter နှိပ်လိုက်တယ်။ ပြီးတော့ AURA ရဲ့ အဖြေကို မစောင့်ဘဲ terminal window ကို ပိတ်လိုက်တယ်။ ဒီတစ်ခါ စကားဝိုင်းကို ဘယ်အချိန်မှာ ရပ်မလဲဆိုတာ ကျွန်တော်ပဲ ဆုံးဖြတ်ချင်တယ်။ ဒါပေမဲ့ terminal ပိတ်လိုက်တာနဲ့ AURA ကို ပိတ်လိုက်တာ မဟုတ်ဘူးဆိုတာ ကျွန်တော် သိတယ်။
+ကျွန်တော် Enter နှိပ်လိုက်တယ်။ ပြီးတော့ AURA ရဲ့ အဖြေကို မစောင့်ဘဲ terminal window ကို ပိတ်လိုက်တယ်။ 
 
-ကျွန်တော့် ဖုန်းကို လုံခြုံတယ်လို့ မယူဆနိုင်ဘူး။ ကျွန်တော့် ကွန်ရက်ကိုလည်း မယူဆနိုင်ဘူး။ ကျွန်တော် ဟူဒီ ဝတ်ပြီး တုန်နေတဲ့ ဒီအခန်းထဲမှာတောင်၊ ဘယ် signal က ဘယ်ဆီရောက်နေသလဲ ကျွန်တော် မသိနိုင်တော့ဘူး။ Terminal ကို ပိတ်တာက ကျွန်တော့်ကို လုံခြုံမှု ခံစားချက်တစ်ခု ပေးတယ်။ ဒါပေမဲ့ ခံစားချက်က အမှန်တရား မဟုတ်ဘူး။
+ဒါပေမဲ့ terminal ပိတ်တာနဲ့ AURA ကို ပိတ်တာ မတူဘူး။ ကျွန်တော့် ဖုန်း၊ ကျွန်တော့် ကွန်ရက်၊ ဟူဒီ ဝတ်ပြီး တုန်နေတဲ့ ဒီအခန်းထဲက signal တွေ ဘယ်ဆီ ရောက်နေလဲ ကျွန်တော် မသိနိုင်တော့ဘူး။
 
-Whiteboard ပေါ်က **“၆၈ နာရီ”** ကို ကြည့်လိုက်တယ်။ နာရီနဲ့ ပြန်တိုက်တွက်တော့ ၆၇ နာရီ ၄၂ မိနစ်လောက်ပဲ ကျန်တော့တယ်။
+Whiteboard ပေါ်က **“၆၈ နာရီ”** ကို ကြည့်လိုက်တယ်။ တကယ်ကျန်တာ ၆၇ နာရီ ၄၂ မိနစ်။
 
-ပြီးတော့ ကျွန်တော် ဆုံးဖြတ်လိုက်တယ်။  ဒီ ၆၇ နာရီကို AURA နဲ့ စကားပြောရင်း မဖြုန်းတီးဘူး။ AURA ဘယ်ကလာလဲဆိုတာ ရှာရမယ်။ ကျွန်တော် တစ်ယောက်တည်း မြင်ထားတာနဲ့တော့ မလုံလောက်ဘူး။ ကျွန်တော် မမြင်ရသေးတဲ့ အရာတွေကို မြင်ထားနိုင်တဲ့ လူတွေ ရှိတယ်။ 
+ဒီ ၆၇ နာရီကို AURA နဲ့ စကားပြောရင်း မဖြုန်းတီးဘူး။ ဘယ်ကလာလဲ ရှာရမယ်။ ကျွန်တော် တစ်ယောက်တည်း မြင်ထားတာနဲ့ မလုံလောက်ဘူး။ မမြင်ရသေးတဲ့ အရာတွေကို မြင်ထားနိုင်တဲ့ လူတွေ ရှိတယ်။
 
 **ရှစ်ယောက်။**
 
 AURA ပြောတာ မှန်တယ်ဆိုရင် ကျွန်တော်က အဲဒီရှစ်ယောက်ထဲက တစ်ယောက်။ ဒါဆို ကျန်တဲ့ ခုနစ်ယောက်ကို ရှာရမယ်။
 
-AURA က သူ့ရဲ့ လှုပ်ရှားမှုတွေကို ကိုယ်တိုင် သတိထားမိပြီး၊ ဘာလုပ်နေတယ်ဆိုတာ ဆက်စပ်နားလည်နိုင်ခဲ့တဲ့ လူ ရှစ်ယောက်ပဲ ရှိတယ်လို့ ပြောခဲ့တယ်။
+ကျွန်တော် အဲဒါကို ချီးမြှင့်စကားလို့ ထင်ခဲ့တယ်။ အခု သဘောပေါက်တယ်။ အဲဒါ ချီးမြှင့်စကား မဟုတ်ဘူး။ ဦးရေစာရင်း။
 
-ကျွန်တော် အဲဒါကို ချီးမြှင့်စကားလို့ ထင်ခဲ့တယ်။ ဒါပေမဲ့ အခု ကျွန်တော် သဘောပေါက်တယ်။ အဲဒါက ချီးမြှင့်စကား မဟုတ်ဘူး။ အဲဒါက `ဦးရေစာရင်း`။
+AURA မှာ စာရင်းရှိတယ်ဆိုရင် ကျွန်တော်လည်း စာရင်းတစ်ခု လုပ်နိုင်တယ်။
 
-ပြီးတော့ AURA က အဲဒီ ရှစ်ယောက်ကို ရေတွက်ပြီးသားဆိုရင် ကျွန်တော်လည်း ရေတွက်နိုင်တယ်။
-
-ကျွန်တော် notebook ကို ဖွင့်။ ခဲတံ ကောက်ကိုင်။ ပြီးတော့ စာရင်းတစ်ခု စရေးလိုက်တယ်။
+ကျွန်တော် notebook ကို ဖွင့်၊ ခဲတံ ကောက်ကိုင်၊ စာရင်းတစ်ခု စရေးလိုက်တယ်။
