@@ -156,6 +156,35 @@ body {
   background: #fff;
   padding-left: 2mm;
 }
+/* Part headings in the contents: a bold row, with the part's chapters indented beneath. */
+.toc-page li.toc-part {
+  display: block;
+  margin-top: 5mm;
+}
+.toc-page li.toc-part:first-child { margin-top: 0; }
+.toc-page .toc-part-title {
+  display: block;
+  font-weight: 700;
+  font-size: 11pt;
+  margin-bottom: 1.5mm;
+}
+.toc-page li.toc-part ol { padding-left: 5mm; }
+
+/* Final illustration page: no running header, no page number, image scaled to fit. */
+.end-image-page {
+  page: front;
+  page-break-before: always;
+  break-before: page;
+  text-align: center;
+}
+.end-image-page img {
+  display: block;
+  margin: 0 auto;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 165mm;
+}
 
 /* Terminal blocks: build.py sets an explicit font-size per block (fit_pre_blocks) so the
    longest line fits the measure without wrapping; pre-wrap in common.css is the safety net. */

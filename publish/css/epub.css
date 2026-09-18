@@ -38,6 +38,13 @@ nav#toc ol { list-style: none; padding: 0; margin: 0; }
 nav#toc li { margin: 0.35em 0; text-indent: 0; }
 nav#toc a { text-decoration: none; color: inherit; }
 nav#toc h1 { font-size: 1.4em; text-align: center; margin: 1em 0; }
+nav#toc li.toc-part { margin-top: 1.2em; }
+nav#toc .toc-part-title { display: block; font-weight: bold; font-size: 1.05em; margin-bottom: 0.3em; }
+nav#toc li.toc-part ol { padding-left: 1.2em; }
+
+.end-image-body { text-align: center; padding: 0; }
+.end-image { margin: 0; padding: 0; }
+.end-image img { display: block; margin: 0 auto; width: auto; height: auto; max-width: 100%; max-height: 100vh; }
 
 .end-page { text-align: center; margin-top: 30%; font-size: 0.95em; }
 

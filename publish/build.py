@@ -61,6 +61,9 @@ def configure_fontconfig() -> Path:
     return conf_path
 
 CHAPTER_HEAD_RE = re.compile(r"^#\s+(အခန်း\s*\([၀-၉0-9]+\))\s*-\s*(.+?)\s*$")
+PART_HEAD_RE = re.compile(r"^#\s+(Part\s+[IVX]+)\s*-\s*(.+?)\s*$")
+PART_RANGE_RE = re.compile(r"^chapters:\s*(\d+)\s*-\s*(\d+)\s*$", re.M)
+_MYANMAR_DIGITS = str.maketrans("၀၁၂၃၄၅၆၇၈၉", "0123456789")
 
 
 @dataclass
@@ -82,13 +85,84 @@ class Chapter:
     def full_title(self) -> str:
         return f"{self.label} - {self.title}"
 
+    @property
+    def number(self) -> int:
+        return int(re.sub(r"\D", "", self.label.translate(_MYANMAR_DIGITS)))
+
+
+@dataclass
+class Part:
+    index: int            # 1-based position
+    label: str            # e.g. "Part I"
+    title: str            # e.g. "Ghost Process"
+    first: int            # first chapter number covered
+    last: int             # last chapter number covered
+    chapters: list[Chapter] = field(default_factory=list)
+
+    @property
+    def full_title(self) -> str:
+        return f"{self.label} - {self.title}"
+
 
 def load_meta() -> dict:
     with open(HERE / "book.json", encoding="utf-8") as f:
         meta = json.load(f)
     meta["_cover_path"] = (HERE / meta["cover"]).resolve()
     meta["_chapter_glob"] = str((HERE / meta["chapter_glob"]).resolve())
+    meta["_part_glob"] = str((HERE / meta["part_glob"]).resolve()) if meta.get("part_glob") else ""
+    # The end image is a post-ending page. It is rendered only when the public source of the
+    # final chapter (end_image_after, resolved inside the chapter directory, never drafts/)
+    # exists. Until then it is neither rendered, copied, nor listed in any navigation.
+    end_image = (HERE / meta["end_image"]).resolve() if meta.get("end_image") else None
+    gate_name = meta.get("end_image_after")
+    gate_path = Path(meta["_chapter_glob"]).parent / gate_name if gate_name else None
+    meta["_end_image_gate"] = gate_path
+    meta["_end_image"] = end_image if end_image and (gate_path is None or gate_path.exists()) else None
     return meta
+
+
+def load_parts(meta: dict, chapters: list[Chapter]) -> list[Part]:
+    """Part title files (chapters/part-NN.md): an H1 'Part N - Title' and a 'chapters: a-b' line.
+
+    Parts only group the table of contents; they add no pages to the body.
+    """
+    if not meta["_part_glob"]:
+        return []
+    parts: list[Part] = []
+    for i, path in enumerate(sorted(glob.glob(meta["_part_glob"])), start=1):
+        text = unicodedata.normalize("NFC", Path(path).read_text(encoding="utf-8"))
+        first = next((ln for ln in text.split("\n") if ln.strip()), "")
+        m = PART_HEAD_RE.match(first)
+        r = PART_RANGE_RE.search(text)
+        if not m or not r:
+            sys.exit(f"{path}: expected '# Part N - Title' and a 'chapters: a-b' line")
+        parts.append(Part(index=i, label=m.group(1), title=m.group(2), first=int(r.group(1)), last=int(r.group(2))))
+    for ch in chapters:
+        part = next((p for p in parts if p.first <= ch.number <= p.last), None)
+        if part is None:
+            sys.exit(f"{ch.source.name}: chapter {ch.number} is not covered by any part file")
+        part.chapters.append(ch)
+    return parts
+
+
+def toc_list_html(parts: list[Part], chapters: list[Chapter], href: str) -> str:
+    """Nested contents list. href is a format string taking the chapter slug.
+
+    A part is listed only when at least one of its chapters is among the public
+    chapter files that were loaded; parts with no public chapter are omitted entirely.
+    """
+    def items(chs: list[Chapter]) -> str:
+        return "".join(f'<li><a href="{href.format(slug=ch.slug)}">{html.escape(ch.full_title)}</a></li>' for ch in chs)
+    if not parts:
+        return f"<ol>{items(chapters)}</ol>"
+    out = ['<ol class="toc-parts">']
+    for p in parts:
+        if not p.chapters:
+            continue
+        out.append(f'<li class="toc-part"><span class="toc-part-title">{html.escape(p.full_title)}</span>'
+                   f"<ol>{items(p.chapters)}</ol></li>")
+    out.append("</ol>")
+    return "".join(out)
 
 
 def load_chapters(meta: dict) -> list[Chapter]:
@@ -215,7 +289,7 @@ def add_syllable_breaks(fragment: str) -> str:
             out.append(_SYLLABLE_BREAK_RE.sub("\u200b", piece))
     return "".join(out)
 
-def build_pdf(meta: dict, chapters: list[Chapter], out_path: Path) -> Path:
+def build_pdf(meta: dict, chapters: list[Chapter], parts: list[Part], out_path: Path) -> Path:
     configure_fontconfig()
     from weasyprint import HTML, CSS
     import pdf_text_fix
@@ -225,28 +299,29 @@ def build_pdf(meta: dict, chapters: list[Chapter], out_path: Path) -> Path:
     cover_uri = meta["_cover_path"].as_uri()
     recto = "recto" if meta.get("recto_chapter_start") else ""
 
-    toc_items = "".join(
-        f'<li><a href="#{ch.slug}">{html.escape(ch.full_title)}</a></li>' for ch in chapters
-    )
-    parts = [
+    toc_list = toc_list_html(parts, chapters, "#{slug}")
+    pieces = [
         '<!DOCTYPE html><html lang="my"><head><meta charset="utf-8"/>',
         f'<title>{html.escape(meta["title"])}</title></head>',
         f'<body data-title="{html.escape(meta["title"])}">',
         f'<div class="cover-page"><img src="{cover_uri}" alt="Cover"/></div>',
         f'<section class="front">{title_page}</section>',
         f'<section class="front">{copyright_page}</section>',
-        f'<section class="front toc-page"><h1>မာတိကာ</h1><ol>{toc_items}</ol></section>',
+        f'<section class="front toc-page"><h1>မာတိကာ</h1>{toc_list}</section>',
     ]
     for ch in chapters:
         group = "group-a" if ch.index % 2 else "group-b"
-        parts.append(
+        pieces.append(
             f'<section class="chapter {group} {recto}" id="{ch.slug}">'
             + chapter_head_html(ch)
             + fit_pre_blocks(add_syllable_breaks(ch.body_html))
             + '</section>'
         )
-    parts.append('</body></html>')
-    doc_html = "\n".join(parts)
+    if meta["_end_image"]:
+        # Final content page: the illustration alone, on a page with no header or folio.
+        pieces.append(f'<section class="end-image-page"><img src="{meta["_end_image"].as_uri()}" alt=""/></section>')
+    pieces.append('</body></html>')
+    doc_html = "\n".join(pieces)
 
     css_files = [HERE / "css" / "common.css", HERE / "css" / "print.css"]
     if not meta.get("running_headers", True):
@@ -289,12 +364,14 @@ def xhtml_doc(meta: dict, title: str, body: str, body_class: str = "", epub_type
     return XHTML_HEAD.format(lang=meta["language"], title=html.escape(title), body_attrs=attrs) + body + XHTML_TAIL
 
 
-def build_epub(meta: dict, chapters: list[Chapter], out_path: Path) -> Path:
+def build_epub(meta: dict, chapters: list[Chapter], parts: list[Part], out_path: Path) -> Path:
     title_page, copyright_page = front_matter_html(meta)
     cover_path = meta["_cover_path"]
     cover_ext = cover_path.suffix.lower().lstrip(".")
     cover_mime = {"png": "image/png", "jpg": "image/jpeg", "jpeg": "image/jpeg"}[cover_ext]
     cover_name = f"cover.{cover_ext}"
+    end_image = meta["_end_image"]
+    end_name = f"end.{end_image.suffix.lower().lstrip('.')}" if end_image else ""
     modified = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     uid = meta["identifier"]
 
@@ -307,12 +384,10 @@ def build_epub(meta: dict, chapters: list[Chapter], out_path: Path) -> Path:
     docs.append(("titlepage", "text/title.xhtml", xhtml_doc(meta, meta["title"], title_page, epub_type="titlepage")))
     docs.append(("copyright", "text/copyright.xhtml", xhtml_doc(meta, "Copyright", copyright_page, epub_type="copyright-page")))
 
-    nav_items = "".join(
-        f'<li><a href="{ch.slug}.xhtml">{html.escape(ch.full_title)}</a></li>' for ch in chapters
-    )
+    nav_list = toc_list_html(parts, chapters, "{slug}.xhtml")
     nav_xhtml = xhtml_doc(
         meta, "မာတိကာ",
-        '<nav epub:type="toc" id="toc"><h1>မာတိကာ</h1><ol>' + nav_items + '</ol></nav>'
+        '<nav epub:type="toc" id="toc"><h1>မာတိကာ</h1>' + nav_list + '</nav>'
         '<nav epub:type="landmarks" hidden="hidden"><ol>'
         '<li><a epub:type="cover" href="cover.xhtml">Cover</a></li>'
         '<li><a epub:type="toc" href="nav.xhtml">Table of Contents</a></li>'
@@ -323,16 +398,41 @@ def build_epub(meta: dict, chapters: list[Chapter], out_path: Path) -> Path:
     for ch in chapters:
         body = f'<section epub:type="chapter" id="{ch.slug}">' + chapter_head_html(ch) + ch.body_html + '</section>'
         docs.append((ch.slug, f"text/{ch.slug}.xhtml", xhtml_doc(meta, ch.full_title, body, epub_type="bodymatter")))
+    if end_image:
+        docs.append(("endimage", "text/end.xhtml", xhtml_doc(
+            meta, meta["title"],
+            f'<div class="end-image"><img src="../images/{end_name}" alt=""/></div>',
+            body_class="end-image-body", epub_type="backmatter")))
 
     # --- NCX (EPUB 2 readers)
-    nav_points = "".join(
-        f'<navPoint id="np{ch.index}" playOrder="{ch.index}"><navLabel><text>{html.escape(ch.full_title)}</text></navLabel>'
-        f'<content src="text/{ch.slug}.xhtml"/></navPoint>' for ch in chapters
-    )
+    order = 0
+
+    def nav_point(pid: str, label: str, src: str, inner: str = "", play_order: int | None = None) -> str:
+        nonlocal order
+        if play_order is None:
+            order += 1
+            play_order = order
+        return (f'<navPoint id="{pid}" playOrder="{play_order}"><navLabel><text>{html.escape(label)}</text></navLabel>'
+                f'<content src="{src}"/>{inner}</navPoint>')
+
+    if parts:
+        nav_points = ""
+        for p in parts:
+            if not p.chapters:
+                continue
+            # A part points at its first chapter's file, so NCX requires it to share that
+            # chapter's playOrder (epubcheck RSC-005).
+            part_order = order + 1
+            inner = "".join(nav_point(f"np{ch.slug}", ch.full_title, f"text/{ch.slug}.xhtml") for ch in p.chapters)
+            nav_points += nav_point(f"nppart{p.index}", p.full_title, f"text/{p.chapters[0].slug}.xhtml", inner, play_order=part_order)
+        ncx_depth = 2
+    else:
+        nav_points = "".join(nav_point(f"np{ch.slug}", ch.full_title, f"text/{ch.slug}.xhtml") for ch in chapters)
+        ncx_depth = 1
     ncx = (
         '<?xml version="1.0" encoding="utf-8"?>\n'
         '<ncx xmlns="http://www.daisy.org/z3986/2005/ncx/" version="2005-1">'
-        f'<head><meta name="dtb:uid" content="{html.escape(uid)}"/><meta name="dtb:depth" content="1"/>'
+        f'<head><meta name="dtb:uid" content="{html.escape(uid)}"/><meta name="dtb:depth" content="{ncx_depth}"/>'
         '<meta name="dtb:totalPageCount" content="0"/><meta name="dtb:maxPageNumber" content="0"/></head>'
         f'<docTitle><text>{html.escape(meta["title"])}</text></docTitle>'
         f'<navMap>{nav_points}</navMap></ncx>'
@@ -346,6 +446,9 @@ def build_epub(meta: dict, chapters: list[Chapter], out_path: Path) -> Path:
         *(f'<item id="font-{i}" href="fonts/{fn}" media-type="font/ttf"/>' for i, fn in enumerate(FONT_FILES)),
         '<item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>',
     ]
+    if end_image:
+        end_mime = {"png": "image/png", "jpg": "image/jpeg", "jpeg": "image/jpeg"}[end_name.rsplit(".", 1)[1]]
+        manifest.append(f'<item id="end-image" href="images/{end_name}" media-type="{end_mime}"/>')
     spine = []
     for doc_id, href, _ in docs:
         props = ' properties="nav"' if doc_id == "nav" else ""
@@ -402,6 +505,8 @@ def build_epub(meta: dict, chapters: list[Chapter], out_path: Path) -> Path:
     for fn in FONT_FILES:
         shutil.copy(HERE / "fonts" / fn, src_dir / "OEBPS" / "fonts" / fn)
     shutil.copy(cover_path, src_dir / "OEBPS" / "images" / cover_name)
+    if end_image:
+        shutil.copy(end_image, src_dir / "OEBPS" / "images" / end_name)
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     if out_path.exists():
@@ -424,16 +529,21 @@ def main(argv: list[str]) -> int:
 
     meta = load_meta()
     chapters = load_chapters(meta)
+    parts = load_parts(meta, chapters)
     render_chapters(chapters)
-    print(f"Loaded {len(chapters)} chapters")
+    print(f"Loaded {len(chapters)} chapters in {len(parts)} parts")
+    if meta.get("end_image"):
+        gate = meta["_end_image_gate"]
+        state = "included" if meta["_end_image"] else f"withheld ({gate.name} not in {gate.parent.name}/)"
+        print(f"End image: {state}")
 
     pdf_path = DIST / "Acceptable-Loss-A5.pdf"
     epub_path = DIST / "Acceptable-Loss.epub"
 
     if args.target in ("all", "pdf"):
-        build_pdf(meta, chapters, pdf_path)
+        build_pdf(meta, chapters, parts, pdf_path)
     if args.target in ("all", "epub"):
-        build_epub(meta, chapters, epub_path)
+        build_epub(meta, chapters, parts, epub_path)
     if args.target in ("all", "qa"):
         import qa
         qa.run(meta, chapters, pdf_path, epub_path, DIST / "QA-REPORT.md")

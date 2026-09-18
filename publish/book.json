@@ -9,6 +9,9 @@
   "identifier": "urn:uuid:e12321fb-896b-5283-a07e-bc647cbd5ac4",
   "cover": "../Cover.png",
   "chapter_glob": "../chapters/chapter-*.md",
+  "part_glob": "../chapters/part-*.md",
+  "end_image": "../chapters/hello.png",
+  "end_image_after": "chapter-30.md",
   "recto_chapter_start": true,
   "running_headers": true
 }
