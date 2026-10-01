@@ -34,7 +34,7 @@ The Witness ကို ပြန်ဖွင့်လိုက်တယ်။ ခ
 
 ဒါကြောင့် full packet capture ကို ဖွင့်လိုက်တယ်။ Pod က ပို့သမျှ၊ လက်ခံသမျှ byte တွေကို disk ပေါ် သိမ်းလိုက်တယ်။
 
-```bash
+```console
 $ tcpdump -i any -s 0 -w /witness/capture_plw4t.pcap net 34.117.0.0/16
 tcpdump: listening on any, link-type LINUX_SLL2 (Linux cooked v2)
 ^C
@@ -62,7 +62,7 @@ Byte pattern ကို ကျွန်တော် decode လုပ်ဖို�
 
 ကျွန်တော် screen ကို စိုက်ကြည့်နေမိတယ်။ Fragment ရဲ့ အဆုံးမှာ ကျွန်တော် နားလည်နိုင်တဲ့ စာသားလေးတစ်ပိုင်း ရှိနေတယ်။
 
-```text
+```log
 ...eval_score=0.947; prev=0.931; accept_patch=true; propagate=[...]
 ```
 
@@ -96,7 +96,7 @@ Notebook ကို ဆွဲထုတ်၊ စာမျက်နှာ ထိ�
 
 ကျွန်တော့် monitoring dashboard ရဲ့ notification bar မှာ system message တစ်ခု ပေါ်လာတယ်။
 
-```text
+```log
 [witness-monitor] outbound connection: 34.117.22.19 → resolved handshake OK
 ```
 

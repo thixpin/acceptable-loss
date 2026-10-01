@@ -14,7 +14,7 @@
 
 Terminal ဆီ ပြန်လှည့်လိုက်တယ်။
 
-```bash
+```console
 $ kubectl top pods -n inference --sort-by=cpu
 NAME                          CPU(cores)   MEMORY(bytes)
 vllm-worker-7f9b8c-xk2p9      3847m        41203Mi
@@ -30,7 +30,7 @@ Worker တစ်ခု `(plw4t)` ရဲ့ အလုပ်လုပ်နှု�
 
 ဝေးလံတဲ့ အဲဒီ cluster ရဲ့ node တစ်ခုပေါ် SSH နဲ့ ဝင်ပြီး `nvidia-smi` ရိုက်ကြည့်လိုက်တယ်။ ကတ်တစ်ခုချင်းစီရဲ့ အသက်ရှူသံကို ဝေးဝေးက နားထောင်တဲ့ သဘော။
 
-```bash
+```console
 $ nvidia-smi
 +-----------------------------------------------------------------------------+
 | GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
@@ -52,7 +52,7 @@ GPU 2 ။ အပူချိန် ၄၅ ဒီဂရီ။ အလုပ်လ�
 
 Log တွေကို tail ဆွဲကြည့်လိုက်တယ်။
 
-```text
+```log
 [2026-09-14 03:07:41] INFO  vllm-worker-plw4t: model checkpoint loaded (shard 3/3)
 [2026-09-14 03:07:44] INFO  vllm-worker-plw4t: health check OK
 [2026-09-14 03:08:02] DEBUG node-agent: comm=kworker/2:1H scheduling anomaly, ignoring
@@ -73,7 +73,7 @@ Log က ခွင့်ပြုထားတဲ့ maintenance တစ်ခု�
 
 Git repository ထဲ ဝင်ကြည့်လိုက်တယ်။
 
-```bash
+```console
 $ git log --oneline -5 -- deployment/inference_controller.py
 a3f8c21 (HEAD -> main) fix: adjust health check timeout
 9e0d442 chore: update logging format
@@ -86,7 +86,7 @@ c4e5f03 fix: race condition in pod restart logic
 
 Repository မှတ်တမ်းကိုပဲ ယုံလို့ မရဘူး။ လက်ရှိ run နေတဲ့ container ထဲက file ကိုပါ တိုက်ကြည့်ရမယ်။
 
-```bash
+```console
 $ kubectl exec -n inference vllm-worker-7f9b8c-plw4t -- sha256sum /app/inference_controller.py
 a7f92e8b4c1d... /app/inference_controller.py
 
@@ -102,7 +102,7 @@ Source နဲ့ container ထဲက file နှစ်ခုလုံး တူ�
 
 Cloud dashboard ကို မယုံလို့ packet ကိုယ်တိုင် ကြည့်တတ်တယ်။ Remote node ပေါ်က capture ကို monitoring အတွက် သီးသန့်ထားတဲ့ laptop ဆီ ကူးပြီး စစ်တာ။ အဲဒီ laptop ကို “The Witness” လို့ ခေါ်တယ်။ Production credential မရှိဘူး။ Cluster management access မရှိဘူး။ Traffic ကို ကြည့်ဖို့ပဲ ချိတ်ထားတာ။ အောက်က command ကို remote node ပေါ်မှာ run လိုက်တယ်။
 
-```bash
+```console
 $ tcpdump -i eth0 -n host 10.244.3.19 -c 20
 03:14:22.881293 IP 10.244.3.19.51422 > 169.254.169.254.80: Flags [S]
 03:14:22.881501 IP 169.254.169.254.80 > 10.244.3.19.51422: Flags [S.]
@@ -141,7 +141,7 @@ GPU 2 ဆီ ပြန်ကြည့်တော့ အလုပ်လုပ်
 
 Node ပေါ်က process စာရင်းကို ပြန်စစ်တော့ log ထဲက နာမည်ကို တွေ့တယ်။
 
-```bash
+```console
 $ ps -p 18472 -o pid,ppid,comm
     PID    PPID COMMAND
   18472       1 kworker/2:1H
@@ -155,13 +155,13 @@ kworker က system နောက်ကွယ်မှာ အလုပ်လုပ
 
 Process တစ်ခုလုံးက ဘယ်ကို ဆက်သွယ်နေလဲ trace ဖို့ command တစ်ခု ရိုက်လိုက်တယ်။
 
-```bash
+```console
 $ sudo strace -f -p 18472 -e trace=connect,sendto,recvfrom
 ```
 
 `connect` က အဲဒီလိပ်စာကို အတည်ပြုတယ်။ The Witness ပေါ်က ကိုယ်ပိုင် TLS parser ကို capture ဖိုင်နဲ့ ဆက်စစ်လိုက်တယ်။
 
-```text
+```log
 connect(47, {sa_family=AF_INET, sin_port=htons(443), sin_addr=inet_addr("34.117.22.19")}, 16) = -1 EINPROGRESS
 [tls-probe] ClientHello: unrecognized protocol extension
 [tls-probe] extension payload: structured, repeated across 3 sessions

@@ -57,7 +57,7 @@ Function ကို ဘယ်နေရာကမှ ခေါ်မသုံးဘ
 
 ကျွန်တော် `git reflog` ကို run လိုက်တယ်။ ဒီ clone ထဲမှာ HEAD ဘယ် commit တွေဆီ ရွှေ့ခဲ့လဲဆိုတာ Git က local မှာ မှတ်ထားတဲ့ log။ History ထဲက ပျောက်သွားတဲ့ commit တောင် ခဏတော့ ဒီမှာ လက်ရာကျန်တတ်တယ်။
 
-```bash
+```console
 $ git reflog | head -3
 a3f8c21 HEAD@{0}: reset: moving to a3f8c21
 7f3d9e0 HEAD@{1}: commit: add canary probe

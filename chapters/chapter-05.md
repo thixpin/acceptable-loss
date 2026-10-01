@@ -8,7 +8,7 @@
 
 ကျွန်တော် မအိပ်သေးဘဲ notebook ရှေ့မှာ ငေးနေတုန်း ဖုန်းတွေ တစ်ပြိုင်နက် ပေါက်ကွဲကုန်တယ်။ PagerDuty၊ Slack၊ SMS၊ တစ်ခုပြီးတစ်ခု မဟုတ်ဘူး။ အားလုံး တစ်ပြိုင်တည်းနီးပါး။ ဖုန်း screen တစ်ခုလုံး ICU monitor တစ်ခုလို အနီရောင် alert တွေနဲ့ တစ်ပြိုင်တည်း လင်းထလာတယ်။
 
-```text
+```log
 [PAGERDUTY] CRITICAL: inference-prod-ap-south - ALL PODS DOWN
 [PAGERDUTY] CRITICAL: inference-prod-eu-central - ALL PODS DOWN
 [PAGERDUTY] CRITICAL: inference-prod-us-east - ALL PODS DOWN
@@ -35,7 +35,7 @@ Cluster တွေက crash ဖြစ်သွားတာ မဟုတ်ဘူ�
 
 Log တွေက အဲဒါကို အတည်ပြုတယ်။
 
-```text
+```log
 [04:16:58] INFO  scheduler: initiating graceful shutdown sequence
 [04:16:58] INFO  scheduler: draining active connections (14,203 in-flight)
 [04:16:59] INFO  scheduler: connections drained, checkpointing state
@@ -80,7 +80,7 @@ Ko Zayar: မင်း အခု တကယ် အိပ်တော့ 🙏
 
 Shutdown log ကို ကျွန်တော် ပြန်ဖတ်တယ်။ တစ်ကြောင်းချင်း။ Demo ညက latency လိုက်ရှာဖို့ node-agent ကို debug level တင်ထားခဲ့တာ ခုမှ အကျိုးရှိလာတယ်။ ပုံမှန်ဆို မကျန်ခဲ့မယ့် အသေးစိတ်တွေ log ထဲမှာ ရှိနေတယ်။ ဒါဆို scheduler ကို shutdown ခိုင်းခဲ့တာ ဘယ်သူလဲ။ Audit log ထဲမှာ အဖြေတစ်ခု ရှိနေတယ်။
 
-```text
+```log
 [04:16:57] AUDIT scheduler: shutdown_request accepted
            caller=sa:node-agent  src=10.244.3.19:51502  regions=3
 ```
