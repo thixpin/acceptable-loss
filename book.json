@@ -1,0 +1,39 @@
+{
+  "title": "Acceptable Loss",
+  "author": "သစ်ပင်",
+  "year": "2026",
+  "language": "my",
+  "identifier": "urn:uuid:06a2ca6a-6ee3-4587-aa56-291dd7b8604a",
+  "publisher": "",
+  "output_name": "Acceptable-Loss",
+  "cover": "Cover.png",
+  "web_url": "https://acceptable-loss.thixpin.me/",
+  "chapter_glob": "chapters/chapter-*.md",
+  "font": {
+    "family": "noto-sans-myanmar"
+  },
+  "strings": {
+    "licence_text": "This work is licensed under CC BY-NC-ND 4.0. https://creativecommons.org/licenses/by-nc-nd/4.0/"
+  },
+  "part_glob": "chapters/part-*.md",
+  "code_root": "code",
+  "web_published_chapters": [
+    "chapter-01.md",
+    "chapter-02.md",
+    "chapter-03.md",
+    "chapter-04.md",
+    "chapter-05.md",
+    "chapter-06.md",
+    "chapter-07.md",
+    "chapter-08.md",
+    "chapter-09.md"
+  ],
+  "subtitle": "လက်ခံနိုင်သော ဆုံးရှုံးမှု",
+  "web_description": "Python ကို မြန်မာလို စတင်လေ့လာသူများအတွက် ဥပမာ စာအုပ်။",
+  "recto_chapter_start": true,
+  "end_image": "",
+  "web_analytics": {
+    "provider": "google",
+    "id": "G-W6GH1PHVLY"
+  }
+}

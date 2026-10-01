@@ -1,14 +1,8 @@
-# Python environment and caches
-.venv/
-__pycache__/
-*.pyc
+# Node dependencies
+node_modules/
 
-# Build outputs (regenerate with: python3 publish/build.py all)
+# Build outputs (regenerate with: npm run build)
 dist/
-
-# Downloaded and merged fonts (regenerate with: python3 publish/fonts.py)
-publish/fonts/*.ttf
-publish/fonts/_src/
 
 # macOS
 .DS_Store

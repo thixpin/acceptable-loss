@@ -1,0 +1,20 @@
+{
+  "name": "acceptable-loss",
+  "private": true,
+  "license": "CC-BY-NC-ND-4.0",
+  "type": "module",
+  "engines": {
+    "node": ">=26"
+  },
+  "scripts": {
+    "setup": "playwright install chromium && md2book fonts --config book.json",
+    "build": "md2book build all --config book.json --out dist",
+    "build:pdf": "md2book build pdf --config book.json --out dist",
+    "build:epub": "md2book build epub --config book.json --out dist",
+    "qa": "md2book qa --config book.json --out dist",
+    "check:dashes": "! grep -n \"—\" chapters/*.md"
+  },
+  "devDependencies": {
+    "@thixpin/md2book": "^0.7.1"
+  }
+}

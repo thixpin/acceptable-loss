@@ -37,8 +37,22 @@ Thirty chapters, published here one at a time as each is finalised.
 
 - အခန်း (၁၈) မှ (၃၀) အထိ
 
+## Building the PDF and EPUB
+
+The book is built with [md2book](https://www.npmjs.com/package/@thixpin/md2book) (Node.js 26 or newer; install [epubcheck](https://www.w3.org/publishing/epubcheck/) to have it run as part of the QA report).
+
+```bash
+npm install
+npm run setup         # once: Chromium and the Noto fonts
+npm run build         # PDF + EPUB + QA report
+npm run build:pdf
+npm run build:epub
+npm run qa
+npm run check:dashes  # fails if any chapter contains an em dash
+```
+
+Only `chapters/chapter-NN.md` files are built; metadata lives in `book.json`. Outputs land in `dist/`: `Acceptable-Loss-170x240.pdf`, `Acceptable-Loss.epub`, `QA-REPORT.md` and sample page renders in `qa-pages/`.
+
 ## License
 
-The novel and the publishing toolchain are licensed under [CC BY-NC-ND 4.0](LICENSE). Fonts are Noto, under the [SIL Open Font License](publish/fonts/LICENSE-OFL.txt).
-
-Building the PDF and EPUB: see [publish/README.md](publish/README.md).
+The novel is licensed under [CC BY-NC-ND 4.0](LICENSE).
